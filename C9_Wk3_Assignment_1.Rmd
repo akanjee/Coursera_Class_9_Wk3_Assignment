@@ -1,0 +1,35 @@
+---
+title: "Coursera Building Data Products - Week 3 Assignment"
+author: "Amyn"
+date: '2017-02-12'
+output: slidy_presentation
+---
+
+## Assignment Description
+- Create a web page presentation using R Markdown that features a plot created with Plotly. 
+- Host your webpage on either GitHub Pages, RPubs, or NeoCities. 
+- Your webpage must contain the date that you created the document, and it must contain a plot created with Plotly. 
+- We would love to see you show off your creativity!
+
+## Review Criteria
+- Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?
+- Is the web page a presentation and does it feature an interactive plot that appears to have been created with Plotly?
+
+## Get Started
+- Set the working directory
+- Load the Plotly Library
+- Load the Diamond Data Set
+
+```{r, echo = FALSE}
+setwd("~/Documents/R Working Directory/Course_9_Data_Products/C9_Wk3")
+library(plotly)
+data("diamonds")
+
+```
+
+## Diamond Price Plot
+- Plot the price of diamonds as a function of the number of carrots and the diamond color
+
+```{r, echo = FALSE}
+plot_ly(diamonds, x = ~carat, y = ~price, color = ~color, text = ~paste("Clarity: ", clarity))
+```
